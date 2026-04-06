@@ -1,0 +1,29 @@
+{
+  "name": "workflow-tracker",
+  "version": "1.0.0",
+  "description": "Multi-project workflow tracking plugin for Claude Code",
+  "main": "src/cli/index.js",
+  "scripts": {
+    "start": "node src/cli/index.js",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch",
+    "lint": "eslint src tests",
+    "docs": "node scripts/generate-docs.js"
+  },
+  "dependencies": {
+    "yargs": "^17.7.2",
+    "chalk": "^5.3.0",
+    "fs-extra": "^11.2.0",
+    "toml": "^3.0.0",
+    "mysql2": "^3.6.5",
+    "express": "^4.18.2",
+    "ws": "^8.14.2",
+    "uuid": "^9.0.1",
+    "joi": "^17.11.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "eslint": "^8.54.0",
+    "sqlite3": "^5.1.6"
+  }
+}

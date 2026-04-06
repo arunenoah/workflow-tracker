@@ -1,0 +1,26 @@
+{
+  "name": "Workflow Tracker",
+  "version": "1.0.0",
+  "description": "Multi-project task management with customizable workflows",
+  "author": "Claude Code",
+  "license": "MIT",
+  "manifest": {
+    "commands": [
+      {
+        "name": "workflow",
+        "description": "Manage project workflows and tasks",
+        "subcommands": [
+          "create", "list", "move", "edit", "delete", "show",
+          "approve", "reject", "dashboard",
+          "init-project", "list-projects",
+          "add-stage", "remove-stage", "reorder-stages"
+        ]
+      }
+    ],
+    "hooks": {
+      "onProjectChange": "src/cli/hooks/on-project-change.js"
+    }
+  },
+  "entry": "src/cli/index.js",
+  "defaultData": "~/.claude/workflow-tracker"
+}
