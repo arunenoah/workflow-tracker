@@ -30,7 +30,6 @@ const createCommand = {
         default: ''
       })
       .option('priority', {
-        alias: 'pr',
         describe: 'Priority level (CRITICAL, HIGH, MEDIUM, LOW)',
         type: 'string',
         default: 'MEDIUM',
@@ -90,7 +89,6 @@ const listCommand = {
         type: 'string'
       })
       .option('priority', {
-        alias: 'pr',
         describe: 'Filter by priority (CRITICAL, HIGH, MEDIUM, LOW)',
         type: 'string',
         choices: ['CRITICAL', 'HIGH', 'MEDIUM', 'LOW']
