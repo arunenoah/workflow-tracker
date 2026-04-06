@@ -1,26 +1,88 @@
 {
-  "name": "Workflow Tracker",
+  "name": "Workflow-Tracker",
   "version": "1.0.0",
-  "description": "Multi-project task management with customizable workflows",
-  "author": "Claude Code",
+  "displayName": "Workflow Tracker",
+  "description": "Professional task management with Kanban dashboard and AI agent reviews",
+  "author": "Technical Architecture Team",
   "license": "MIT",
-  "manifest": {
-    "commands": [
-      {
-        "name": "workflow",
-        "description": "Manage project workflows and tasks",
-        "subcommands": [
-          "create", "list", "move", "edit", "delete", "show",
-          "approve", "reject", "dashboard",
-          "init-project", "list-projects",
-          "add-stage", "remove-stage", "reorder-stages"
-        ]
-      }
-    ],
-    "hooks": {
-      "onProjectChange": "src/cli/hooks/on-project-change.js"
+  "keywords": ["tasks", "kanban", "workflow", "projects", "agents", "dashboard"],
+  "type": "plugin",
+  "entry": "src/dashboard/server.js",
+  "autoStart": true,
+  "autoLaunchBrowser": true,
+  "port": 3000,
+  "portFallback": true,
+  "settings": {
+    "storage": "file",
+    "storageType": {
+      "type": "select",
+      "options": ["file", "mysql"],
+      "default": "file",
+      "description": "Storage backend (file for dev, mysql for production)"
+    },
+    "autoOpenDashboard": {
+      "type": "boolean",
+      "default": true,
+      "description": "Automatically open dashboard when Claude Code starts"
+    },
+    "dataDirectory": {
+      "type": "text",
+      "default": "./data",
+      "description": "Directory for storing task data"
     }
   },
-  "entry": "src/cli/index.js",
-  "defaultData": "~/.claude/workflow-tracker"
+  "commands": {
+    "dashboard": {
+      "displayName": "Open Dashboard",
+      "description": "Open Workflow-Tracker Kanban board",
+      "category": "workflow",
+      "icon": "window-open"
+    },
+    "task-create": {
+      "displayName": "Create Task",
+      "description": "Create a new task in current project",
+      "category": "workflow",
+      "icon": "plus"
+    },
+    "task-list": {
+      "displayName": "List Tasks",
+      "description": "Show tasks in current project",
+      "category": "workflow",
+      "icon": "list"
+    },
+    "project-create": {
+      "displayName": "Create Project",
+      "description": "Create a new project",
+      "category": "workflow",
+      "icon": "folder-plus"
+    },
+    "project-list": {
+      "displayName": "List Projects",
+      "description": "Show all projects",
+      "category": "workflow",
+      "icon": "folder"
+    }
+  },
+  "permissions": {
+    "fileSystem": true,
+    "network": true,
+    "localStorage": true
+  },
+  "features": {
+    "dashboard": "Professional Kanban board with drag-and-drop",
+    "agents": "Automated AI code, security, and QA reviews",
+    "realtime": "WebSocket real-time collaboration",
+    "api": "Complete REST API (30+ endpoints)",
+    "storage": "File or MySQL backend",
+    "multiProject": "Manage multiple projects in one place"
+  },
+  "requirements": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  },
+  "dependencies": [
+    "express",
+    "ws",
+    "fs-extra"
+  ]
 }

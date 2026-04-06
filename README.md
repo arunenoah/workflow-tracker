@@ -15,13 +15,44 @@ A **professional task management system** with a beautiful Kanban dashboard, rea
 
 **Perfect for:** Development teams, technical projects, complex workflows, automation-heavy processes
 
-## 🚀 Get Started in 10 Minutes
+## 🚀 Get Started in 3 Steps
 
-### Step 1: Install & Start
+### Option 1: Claude Code Plugin (Recommended - No Setup!)
+
+Workflow-Tracker is a **Claude Code plugin** that auto-starts.
 
 ```bash
+# In Claude Code chat, just use:
+/dashboard              # Opens Kanban board
+/task-create           # Create new task
+/task-list             # Show all tasks
+/project-create        # Create new project
+/project-list          # Show all projects
+```
+
+**What happens automatically:**
+1. ✅ Plugin auto-detects on Claude Code open
+2. ✅ Server starts on port 3000
+3. ✅ Dashboard opens in browser
+4. ✅ Commands registered and ready
+
+**[Read Claude Code Plugin Guide →](CLAUDE_CODE_PLUGIN.md)**
+
+---
+
+### Option 2: Standalone (Manual Setup - 3 Steps)
+
+If you want to run separately:
+
+```bash
+# Step 1: Install
 npm install
+
+# Step 2: Start
 npm start
+
+# Step 3: Open
+curl http://localhost:3000
 ```
 
 **Expected output:**
@@ -31,42 +62,67 @@ npm start
 ✓ WebSocket ready for real-time updates
 ```
 
-### Step 2: Open Dashboard
-
-Navigate to: **http://localhost:3000**
-
-You'll see:
-- Empty Kanban board with workflow stages
-- Project selector dropdown
-- Settings panel
-
-### Step 3: Create a Project
-
-1. Click **Settings ⚙️** (top right)
-2. Click **+ New Project**
-3. Name: "My First Project"
-4. Click **Create**
-
-### Step 4: Create Your First Task
-
-1. Click **+ Add Task** in the **InQueue** column
-2. **Title:** "Implement user login"
-3. **Description:** "Add JWT authentication with bcrypt..."
-4. **Priority:** HIGH
-5. Click **Create Task**
-
-### Step 5: See AI Agent Analysis
-
-1. **Drag** the task to **Code-Review** column
-2. Watch the **AI agent analyze** it (takes ~5 seconds)
-3. See the **score and findings**
-4. Click **Approve** to move to next stage
-
-**Done!** You now see the full power of Workflow-Tracker. 🎉
+Then open your browser to: **http://localhost:3000**
 
 ---
 
-**For more detailed instructions:** See [START_HERE.md](START_HERE.md) (2 min) or [QUICKSTART.md](QUICKSTART.md) (10 min)
+### Quick Demo (5 Minutes)
+
+1. **Use `/dashboard`** command in Claude Code
+   - Kanban board opens automatically
+
+2. **Click Settings ⚙️** → **+ New Project**
+   - Name: "My First Project"
+   - Click **Create**
+
+3. **Click "+ Add Task"** in InQueue
+   - Title: "Implement user login"
+   - Description: "Add JWT auth with bcrypt..."
+   - Priority: HIGH
+   - Click **Create**
+
+4. **Drag to Code-Review**
+   - AI analyzes automatically
+   - See score and findings
+   - Click Approve to move forward
+
+**Done!** 🎉 You've experienced the full power.
+
+---
+
+**More details:** [START_HERE.md](START_HERE.md) (2 min) or [QUICKSTART.md](QUICKSTART.md) (10 min)
+
+## 🔌 Claude Code Plugin Integration
+
+Workflow-Tracker is now a **fully integrated Claude Code plugin** with zero setup:
+
+### ✅ Auto-Start
+- Automatically starts when Claude Code opens
+- No manual `npm install` or `npm start` needed
+- Server runs on port 3000 (or next available)
+
+### ✅ Slash Commands
+Available commands in Claude Code chat:
+- `/dashboard` — Open Kanban board
+- `/task-create` — Create new task
+- `/task-list` — Show all tasks
+- `/project-create` — Create new project
+- `/project-list` — Show all projects
+
+### ✅ Browser Sync
+- Opens dashboard automatically
+- Chat and dashboard stay in sync
+- Real-time WebSocket updates
+
+### ✅ No Manual Setup
+- No terminal commands needed
+- No port management
+- No browser URL typing
+- Works like built-in Claude Code features
+
+**[Complete Plugin Guide →](CLAUDE_CODE_PLUGIN.md)**
+
+---
 
 ## 🎯 Core Features
 
