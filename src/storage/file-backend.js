@@ -92,7 +92,9 @@ class FileBackend {
     // Sort by priority descending, then by created date
     const priorityOrder = { 'CRITICAL': 0, 'HIGH': 1, 'MEDIUM': 2, 'LOW': 3 };
     return tasks.sort((a, b) => {
-      const priorityDiff = (priorityOrder[a.priority] || 3) - (priorityOrder[b.priority] || 3);
+      const aPriority = priorityOrder[a.priority] !== undefined ? priorityOrder[a.priority] : 3;
+      const bPriority = priorityOrder[b.priority] !== undefined ? priorityOrder[b.priority] : 3;
+      const priorityDiff = aPriority - bPriority;
       if (priorityDiff !== 0) return priorityDiff;
       return new Date(b.created_at) - new Date(a.created_at);
     });
